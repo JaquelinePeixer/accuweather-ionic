@@ -1,0 +1,25 @@
+img {
+  mix-blend-mode: lighten;
+  width: 47px;
+  height: auto;
+}
+
+.daily-forecasts {
+  display: flex;
+  background-color: var(--azul-600);
+  padding: 20px 10px 50px 10px;
+
+  .item-forecasts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;   
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+
+    img{
+      border-left: 1px solid var(--white-op38);
+    }
+
+  }
+}
