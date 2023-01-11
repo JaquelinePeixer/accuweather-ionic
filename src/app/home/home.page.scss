@@ -1,0 +1,120 @@
+.general-location-container {
+  display: flex;
+  color: var(--white);
+
+  .location-container {
+    text-align: center;
+    padding: 2rem 0;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+.temperature {
+  padding: 0 20px;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: 76%;
+  min-height: 227px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: 33px;
+  mix-blend-mode: lighten;
+
+  .realFeel {
+    font-size: 11px;
+    text-transform: capitalize;
+  }
+
+  span {
+    font-size: 34px;
+  }
+
+}
+
+.general-data-weather {
+  padding: 20px;
+  text-align: center;
+
+  p {
+    font-size: 13px;
+  }
+}
+
+.daily-forecasts {
+  display: flex;
+  background-color: var(--azul-600);
+  padding: 20px 10px 50px 10px;
+
+  .item-forecasts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 1px solid var(--white-op38);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+
+    img {
+      mix-blend-mode: lighten;
+    }
+
+    &:first-child {
+      border: 0;
+    }
+
+  }
+}
+
+
+.container-menu {
+  background: var(--azul-500, #0D41AE);
+  height: 100vh;
+
+  span {
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 400;
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 5px;
+    color: var(--white);
+    box-shadow: none;
+    text-transform: capitalize;
+    padding: 7px;
+    width: 100%;
+
+    &:hover {
+      outline: none;
+    }
+
+  }
+}
+
+// ion-list
+.list-md {
+  --ion-item-background: transparent;
+  --ion-color-primary: var(--white);
+}
+
+.item-input {
+  --highlight-color-focused: var(--azul-700);
+  --highlight-color-valid: var(--azul-700);
+  --highlight-color-invalid: var(--ion-color-danger, #eb445a);
+}
+
+ion-item::part(native) {
+  background: transparent;
+  color: var(--white);
+  border: 0;
+  border-bottom: 1px solid var(--white-op38);
+}

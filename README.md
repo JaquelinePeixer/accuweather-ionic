@@ -6,6 +6,5 @@
 </br>
 
 ## Aplicativo de previsão do tempo utilizando:
--------
 - AccuWeather API: https://developer.accuweather.com/apis
 - Framework: Ionic + Sass
