@@ -14,7 +14,7 @@ export class HomePage {
   itemSave: any
   oneDayConditions: any
 
-  inputCity: string = "Gaspar"
+  inputCity: string = ''
   dataCity: any
 
   listCity: any
@@ -64,13 +64,12 @@ export class HomePage {
   }
 
   constructor(private apiAccuweather: AccuweatherService) {
-    this.searchCity(this.inputCity)
+    this.initialCity('Gaspar')
   }
 
-  searchCity(value: string) {
+  initialCity(value: string) {
     this.apiAccuweather.searchCity(value).subscribe(data => {
       this.dataCity = data[0]
-
       this.getInitial(this.dataCity.Key)
     })
   }
@@ -87,6 +86,8 @@ export class HomePage {
     this.getCurrentConditions(key)
     this.getFiveDayConditions(key)
     this.getOneDayConditions(key)
+
+    // fechar modal
   }
 
 
