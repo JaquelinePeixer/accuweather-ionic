@@ -16,7 +16,7 @@
       </form>
 
       <ion-list>
-        <ion-item *ngFor="let item of this.listCity" button (click)="getInitial(item.Key)">
+        <ion-item *ngFor="let item of this.listCity" button (click)="getInitial(item)">
           <ion-label>{{item.LocalizedName}}</ion-label>
         </ion-item>
       </ion-list>
@@ -38,33 +38,33 @@
         </ion-buttons>
 
         <div class="location-container">
-          <span>{{this.dataCity.LocalizedName}} | </span>
+          <span>{{this.dataCity?.LocalizedName}} | </span>
           <span style="text-transform: capitalize;">{{ this.currentConditions.LocalObservationDateTime | date : 'd MMMM, HH:mm' : '' : 'pt-BR' }}</span>
         </div>
 
       </div>
 
       <div class="temperature" [style.backgroundImage]="'url(' + this.currentConditions.newIcon + ')'">
-        <span>{{ this.currentConditions.Temperature.Metric.Value }}
-          º{{this.currentConditions.Temperature.Metric.Unit}}</span>
-        <span class="realFeel">RealFeel {{ this.currentConditions.RealFeelTemperature.Metric.Value }}
-          º{{this.currentConditions.RealFeelTemperature.Metric.Unit}}</span>
+        <span>{{ this.currentConditions.Temperature?.Metric.Value }}
+          º{{this.currentConditions.Temperature?.Metric.Unit}}</span>
+        <span class="realFeel">RealFeel {{ this.currentConditions.RealFeelTemperature?.Metric.Value }}
+          º{{this.currentConditions.RealFeelTemperature?.Metric.Unit}}</span>
       </div>
 
       <div class="general-data-weather">
         <p>{{ this.currentConditions.WeatherText }}</p>
-        <p>Nascer do sol: {{ this.oneDayConditions.Sun.Rise | date : "hh:mm" }} | Precpitação: {{
-          this.currentConditions.Precip1hr.Metric.Value }}{{ this.currentConditions.Precip1hr.Metric.Unit }}</p>
-        <p>Pôr do sol: {{ this.oneDayConditions.Sun.Set | date : "hh:mm" }} | Visibilidade: {{
-          this.currentConditions.Visibility.Metric.Value }}{{ this.currentConditions.Visibility.Metric.Unit }}</p>
+        <p>Nascer do sol: {{ this.oneDayConditions?.Sun.Rise | date : "hh:mm" }} | Precpitação: {{
+          this.currentConditions.Precip1hr?.Metric.Value }}{{ this.currentConditions.Precip1hr?.Metric.Unit }}</p>
+        <p>Pôr do sol: {{ this.oneDayConditions?.Sun.Set | date : "hh:mm" }} | Visibilidade: {{
+          this.currentConditions.Visibility?.Metric.Value }}{{ this.currentConditions.Visibility?.Metric.Unit }}</p>
       </div>
 
       <div class="daily-forecasts">
         <div class="item-forecasts" *ngFor="let item of this.dailyForecasts">
           <span>{{ item.Date | date: "EE"}}</span>
           <img src={{item.newIcon}} alt={{item.Day.IconPhrase}} title="{{item.Day.IconPhrase}}">
-          <span>{{ item.Temperature.Minimum.Value | number: '1.0-0' }} {{item.Temperature.Minimum.Unit }}</span>
-          <span>{{ item.Temperature.Maximum.Value | number: '1.0-0' }} {{item.Temperature.Maximum.Unit }}</span>
+          <span>{{ item.Temperature?.Minimum.Value | number: '1.0-0' }} {{item.Temperature?.Minimum.Unit }}</span>
+          <span>{{ item.Temperature?.Maximum.Value | number: '1.0-0' }} {{item.Temperature?.Maximum.Unit }}</span>
         </div>
       </div>
 
